@@ -184,11 +184,19 @@ public class JBoxFrame extends javax.swing.JFrame {
    }//GEN-LAST:event_jExit
 
    private void jDownSpeed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDownSpeed
-     thread.setDelay(thread.getDelay() + 5);
+      if (thread.getDelay() <= 50) {
+         thread.setDelay(thread.getDelay() + 5);
+      } else {
+         thread.setDelay(50);
+      }
    }//GEN-LAST:event_jDownSpeed
 
    private void jUpSpeed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpSpeed
-      thread.setDelay(thread.getDelay() - 5);
+      if (thread.getDelay() >= 5) {
+        thread.setDelay(thread.getDelay() - 5);
+      }else{
+         thread.setDelay(5);
+      }
    }//GEN-LAST:event_jUpSpeed
 
    // switch start-stop buttons
